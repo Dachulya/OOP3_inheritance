@@ -6,12 +6,14 @@ public class Train extends Transport{
     private String nameStationStartTravel;
     private String nameStationFinishTravel;
     private int countVagonov;
+    private String refill;
+    private float refillConcentrat;
     public Train(String brend, String model,
                  int speed, String colour,
                  int dateOfCreation, String countryCreation,
                  int costTravel,int timeTravel,String nameStationStartTravel,
-                 String nameStationFinishTravel,int countVagonov){
-        super(brend,model,speed,colour,countryCreation,dateOfCreation);
+                 String nameStationFinishTravel,int countVagonov,String refill,float refillConcentrat){
+        super(brend,model,speed,countryCreation,dateOfCreation,colour);
         this.costTravel=divideIntoVariantsInt(costTravel,0);
         this.countVagonov=divideIntoVariantsInt(countVagonov,0);
         this.nameStationFinishTravel=divideIntoVariants(nameStationFinishTravel,"без имени");
@@ -69,5 +71,24 @@ public class Train extends Transport{
             return defaultValue;
         }else {
             return value;}
+    }
+    @Override
+    public void fuelPercentage(){
+        this.refill=divideIntoVariants(refill,"Информация не указана");
+        this.refillConcentrat=refillConcentrat;
+
+    } public String getRefill() {
+        return refill;
+    }
+    public float getRefillConcentrat() {
+        return refillConcentrat;
+    }
+
+    public void setRefillConcentrat(float refillConcentrat) {
+        this.refillConcentrat = refillConcentrat;
+    }
+
+    public void setRefill(String refill) {
+        this.refill = divideIntoVariants(refill,getRefill());
     }
 }
