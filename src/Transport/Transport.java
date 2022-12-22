@@ -22,7 +22,7 @@ public abstract class Transport {
     /*public Transport(int speed) {
         this.speed = speed;
     }*/
-
+//
     public Transport(String brend, String model, int yearCreat, String countryCreation, int speed, String colour) {
         this.brend=divideIntoVariants(brend,"Информация не указана");
 

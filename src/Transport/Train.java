@@ -4,6 +4,7 @@ public class Train extends Transport{
     private int costTravel;
     private int timeTravel;
     private String nameStationStartTravel;
+    //
     private String nameStationFinishTravel;
     private int countVagonov;
     private String refill;
