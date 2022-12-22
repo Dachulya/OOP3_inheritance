@@ -6,7 +6,7 @@ public class Car extends Transport{
     private int maxSpeed;
     private String colour;
     private final int dateOfCreation;
-    private final String countryCreation;*/\
+    private final String countryCreation;*/
     private String refill;
     private float refillConcentrat;
     public Car(String brend, String model,
@@ -87,4 +87,12 @@ public class Car extends Transport{
             return defaultValue;
         }else {
             return value;}}
+
+    @Override
+    public String toString(){
+        return getBrend()+" "+getModel()+", "+getYearCreat()+
+                " года выпуска, сборка в "+getCountryCreation()
+                +", "+getColour()+" цвета, max скорость- "+getSpeed()+"заправляется"+getRefill()+
+                "концентрация топлива"+getRefillConcentrat();
+    }
 }

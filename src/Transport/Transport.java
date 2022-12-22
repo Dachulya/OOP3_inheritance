@@ -30,11 +30,14 @@ public abstract class Transport {
 
         this.yearCreat = yearCreat;
 
+        this.speed=divideIntoVariantsInt(speed,0);
+
         this.countryCreation=divideIntoVariants(countryCreation,"Информация не указана");
 
         this.yearCreat=yearCreat;
 
         this.colour=divideIntoVariants(colour,"не указан");
+
 
     }
 
@@ -72,9 +75,5 @@ public abstract class Transport {
 
     public abstract void fuelPercentage();
 
-    public String toString(){
-        return getBrend()+" "+getModel()+", "+getYearCreat()+
-                " года выпуска, сборка в "+getCountryCreation()
-                +", "+getColour()+" цвета, max скорость- "+getSpeed();
-    }
+
 }

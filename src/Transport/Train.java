@@ -91,4 +91,14 @@ public class Train extends Transport{
     public void setRefill(String refill) {
         this.refill = divideIntoVariants(refill,getRefill());
     }
+
+    @Override
+    public String toString(){
+        return getBrend()+" "+getModel()+", "+getYearCreat()+
+                " года выпуска, сборка в "+getCountryCreation()
+                +", "+getColour()+" цвета, max скорость- "+getSpeed()+"заправляется "+getRefill()+
+                "концентрация топлива "+getRefillConcentrat()+
+                ",конечная станция "+getNameStationFinishTravel()+", начальная станция "+getNameStationStartTravel()
+                +"стоимость поездки "+ getCostTravel()+",время поездки "+getTimeTravel()+", всего"+getCountVagonov()+" вагонов";
+    }
 }

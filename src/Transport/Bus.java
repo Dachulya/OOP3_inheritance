@@ -7,9 +7,7 @@ public class Bus extends Transport {
     private float refillConcentrat;
 
 
-    public int getCountPlace() {
-        return countPlace;
-    }
+
 
 
     public Bus(String brend, String model,
@@ -19,6 +17,7 @@ public class Bus extends Transport {
         super(brend,model,speed,countryCreation,dateOfCreation,colour);
         this.countPlace=divideIntoVariantsInt(countPlace,0);
 
+
 }
 
     public static int divideIntoVariantsInt(int value, int defaultValue){
@@ -27,11 +26,15 @@ public class Bus extends Transport {
         }else {
             return value;}
     }
+    public int getCountPlace() {
+        return countPlace;
+    }
     public String toString(){
         return getBrend()+" "+getModel()+", "+getYearCreat()+
                 " года выпуска, сборка в "+getCountryCreation()
                 +", "+getColour()+" цвета, max скорость- "
-                +getSpeed()+"количество посадочных"+getCountPlace;
+                +getSpeed()+"количество посадочных "+getCountPlace()+", вид топлива"+
+                getRefill()+", концентрация топлива"+getRefillConcentrat();
     }
     @Override
     public void fuelPercentage(){
